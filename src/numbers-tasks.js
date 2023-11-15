@@ -640,9 +640,9 @@ function getRandomInteger(min, max) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  if (a === Number.MAX_VALUE || b === Number.MAX_VALUE) {
-    return Number.MAX_VALUE;
-  }
+  // if (a === Number.MAX_VALUE || b === Number.MAX_VALUE) {
+  //   return Number.MAX_VALUE - 1;
+  // }
   return Math.hypot(a, b);
 }
 
@@ -660,15 +660,14 @@ function getHypotenuse(a, b) {
  * 15 => 8
  */
 function getCountOfOddNumbers(number) {
-  let result = 0;
-  let pointer = 0;
-  while (pointer !== number + 1) {
-    if (pointer % 2 !== 0) {
-      result += 1;
+  let count = 0;
+  const absNum = Math.abs(number);
+  for (let i = 0; i <= absNum; i += 1) {
+    if (i % 2 !== 0) {
+      count += 1;
     }
-    pointer += 1;
   }
-  return result;
+  return count;
 }
 
 module.exports = {
